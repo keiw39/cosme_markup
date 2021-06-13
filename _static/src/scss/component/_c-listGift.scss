@@ -1,0 +1,56 @@
+/*
+listGift
+----------------------------------------- */
+@use "../setting/setting" as set;
+@use "../function/responsive" as res;
+@use "../function/rem";
+
+.c-listGift__itemWrap {
+  position: relative;
+  width: 94.45%;
+  padding: 40px 23px 63px;
+  margin: 0 0 0 auto;
+  background-color: #fff;
+  @include res.responsive(lg) {
+    display: flex;
+    width: 87.85%;
+    padding-top: rem.rem(154);
+    padding-right: rem.rem(100);
+    padding-bottom: rem.rem(152);
+    padding-left: rem.rem(100);
+  }
+  .l-section__titleWrap {
+    @include res.responsive(lg) {
+      width: 50%;
+    }
+    .l-section__subTitle {
+      &::before {
+        @include res.responsive(lg) {
+          width: 12%;
+        }
+      }
+      @include res.responsive(lg) {
+        padding-left: 16%;
+      }
+    }
+  }
+}
+
+.c-listGift__textWrap {
+  padding-top: 18px;
+  @include res.responsive(lg) {
+    width: 50%;
+    padding-top: rem.rem(52);
+  }
+}
+
+.c-listGift__text {
+  margin-bottom: 32px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.05em;
+  @include res.responsive(lg) {
+    margin-bottom: rem.rem(92);
+  }
+}

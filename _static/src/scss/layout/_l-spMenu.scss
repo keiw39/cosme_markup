@@ -1,0 +1,102 @@
+/* spMenu
+----------------------------------------- */
+@use "../setting/setting" as set;
+@use "../function/responsive" as res;
+@use "../function/rem";
+
+.l-spMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 320px;
+  height: 100vh;
+  background-color: #fff;
+  opacity: 0.9;
+  transition: 0.5s;
+  transform: translateX(320px); /* right0から320px移動した位置 */
+  .l-container {
+    padding-top: 142px;
+    padding-right: 60px;
+    padding-left: 60px;
+    @include res.responsive(sm) {
+      padding-top: rem.rem(160);
+      padding-left: rem.rem(40);
+    }
+    @include res.responsive(lg) {
+      padding-top: rem.rem(210);
+      padding-left: rem.rem(100);
+    }
+  }
+  &.is-active {
+    transform: translateX(0); /* right0まで-320px移動 */
+    animation-name: fade-in;
+    animation-duration: 1s;
+  }
+  @include res.responsive(sm) {
+    width: 50%;
+    transform: translateX(100%); /* right0から320px移動した位置 */
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.l-spMenu__navItem {
+  &:not(:last-of-type) {
+    margin-bottom: 25px;
+  }
+  &.-phone {
+    color: #fff;
+    i {
+      margin-right: 6px;
+      font-size: 20px;
+      color: #fff;
+    }
+    span {
+      font-family: set.$font-family-english;
+      font-size: 16px;
+    }
+  }
+}
+
+.l-spMenu__navLink {
+  display: inline-block;
+  font-family: set.$font-family-english;
+  font-size: 24px;
+  color: #2e1c10;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+  }
+  @include res.responsive(sm) {
+    font-size: rem.rem(32);
+  }
+  @include res.responsive(lg) {
+    font-size: 40px;
+    line-height: 1;
+  }
+}
+
+.l-spMenu__closeToggle {
+  position: absolute;
+  top: 3.5%;
+  right: 9.5%;
+  display: inline-block;
+  cursor: pointer;
+  @include res.responsive(lg) {
+    right: 13.5%;
+  }
+  img {
+    @include res.responsive(lg) {
+      width: 50px;
+    }
+  }
+}

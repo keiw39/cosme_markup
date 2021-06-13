@@ -1,0 +1,51 @@
+/*
+listAbout
+----------------------------------------- */
+@use "../setting/setting" as set;
+@use "../function/responsive" as res;
+@use "../function/rem";
+
+.c-listAbout__itemWrap {
+  padding-top: 18px;
+  @include res.responsive(lg) {
+    width: 50%;
+    padding-top: rem.rem(50);
+  }
+}
+
+.c-listAbout__videoWrap {
+  position: relative;
+  width: 81.5%;
+  height: 42.3vw;
+  margin: 30px 0 0 auto;
+  overflow: hidden;
+  @include res.responsive(lg) {
+    width: 100%;
+    height: 27.8vw;
+    margin-top: rem.rem(142);
+  }
+}
+
+.c-listAbout__videoImg {
+  height: 100%;
+  min-height: 42.3vw;
+  overflow: hidden;
+  transition-duration: 0.8s;
+  object-fit: cover;
+  @include res.responsive(lg) {
+    height: 27.8vw;
+  }
+}
+
+.c-listAbout__videoToggle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  transform: translate(-50%, -50%);
+  &:hover {
+    ~ .c-listAbout__videoImg {
+      transform: scale(1.2);
+    }
+  }
+}

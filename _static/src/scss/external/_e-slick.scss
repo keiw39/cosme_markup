@@ -1,0 +1,151 @@
+/* =====================================================
+slick.js上書き用
+===================================================== */
+@use "../setting/setting" as set;
+@use "../function/responsive" as res;
+@use "../function/rem";
+
+.l-slick02,
+.l-slick03 {
+  .slick-prev {
+    top: -2%;
+    left: 72%;
+    width: 40px;
+    &::before {
+      display: block;
+      width: 40px;
+      height: 5px;
+      content: '';
+      background-image: url(../img/slick-prev.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 1;
+      @include res.responsive(lg) {
+        background-image: url();
+      }
+    }
+  }
+  .slick-next {
+    top: -2%;
+    right: 5%;
+    width: 40px;
+    &::before {
+      display: block;
+      width: 40px;
+      height: 5px;
+      content: '';
+      background-image: url(../img/slick-next.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 1;
+      @include res.responsive(lg) {
+        background-image: url();
+      }
+    }
+  }
+  .slick-dots {
+    bottom: -34px;
+    li {
+      width: 15px;
+      height: 15px;
+      button {
+        &::before {
+          width: 15px;
+          height: 15px;
+          content: '';
+          border: 1px solid #2d1d10;
+          border-radius: 50%;
+          opacity: 1;
+        }
+      }
+      &.slick-active {
+        button {
+          &::before {
+            color: #2d1d10;
+            background-color: #f5d377;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.l-slick02 {
+  .slick-list {
+    padding-top: 76px !important;
+    @include res.responsive(sm) {
+      padding-top: 110px !important;
+    }
+  }
+}
+
+.l-slick03 {
+  .slick-prev {
+    top: -24%;
+    left: 61%;
+    width: 40px;
+    @include res.responsive(sm) {
+      top: -20%;
+    }
+    @include res.responsive(lg) {
+      top: 42%;
+      left: -10.5%;
+      width: 45px;
+      height: 6px;
+      background-image: url(../img/slick-prev_pc.svg);
+    }
+  }
+  .slick-next {
+    top: -24%;
+    right: 15%;
+    width: 40px;
+    @include res.responsive(sm) {
+      top: -20%;
+    }
+    @include res.responsive(lg) {
+      top: 42%;
+      right: -6%;
+      width: 45px;
+      height: 6px;
+      background-image: url(../img/slick-next_pc.svg);
+    }
+  }
+  .slick-dots {
+    bottom: -51px;
+    left: -22px;
+    @include res.lg {
+      bottom: -16%;
+    }
+    @include res.responsive(lg) {
+      bottom: -12%;
+      left: -2.3%;
+    }
+    li {
+      width: 9.83px;
+      height: 9.83px;
+      margin: 0 3.3px;
+      @include res.responsive(lg) {
+        width: 15px;
+        height: 15px;
+        margin: 0 5px;
+      }
+      button {
+        &::before {
+          width: 9.83px;
+          height: 9.83px;
+          content: '';
+          border: 1px solid #2d1d10;
+          border-radius: 50%;
+          opacity: 1;
+          @include res.responsive(lg) {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+}

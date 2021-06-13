@@ -1,0 +1,56 @@
+/* section
+----------------------------------------- */
+@use "../function/rem";
+@use "../setting/setting" as set;
+@use "../function/responsive" as res;
+
+.l-section {
+  padding-bottom: 100px;
+}
+
+.l-section__subTitle {
+  position: relative;
+  width: 100%;
+  padding-left: 13.5%;
+  margin-bottom: 16px;
+  font-family: set.$font-family-english;
+  font-size: 12px;
+  line-height: 1;
+  color: #2d1b0e;
+  @include res.responsive(md) {
+    padding-left: 7%;
+    font-size: 18px;
+  }
+  &::before {
+    position: absolute;
+    top: 25%;
+    left: 0%;
+    width: 10.9%;
+    height: 1px;
+    content: '';
+    background-color: #d3d3d3;
+    @include res.responsive(md) {
+      width: 5.2%;
+    }
+  }
+}
+
+.l-section__title {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.05em;
+
+  @include res.responsive(lg) {
+    padding-top: rem.rem(20);
+    padding-left: rem.rem(85);
+    font-size: 38px;
+  }
+}
+
+.l-section__text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.05em;
+}

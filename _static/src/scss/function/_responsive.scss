@@ -1,0 +1,30 @@
+/* breakpoint
+----------------------------------------- */
+@use "../setting/breakpoints";
+
+@mixin responsive($breakpoint) {
+  @media #{map-get(breakpoints.$breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// breakpoint 320px〜400px
+@mixin sp {
+  @media screen and (min-width: (breakpoints.$sp)) and (max-width: 399px) {
+    @content;
+  }
+}
+
+// breakpoint 768px〜1024px
+@mixin md {
+  @media screen and (min-width: (breakpoints.$md)) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+// breakpoint 1024px〜1280px
+@mixin lg {
+  @media screen and (min-width: (breakpoints.$lg)) and (max-width: 1279px) {
+    @content;
+  }
+}

@@ -1,0 +1,35 @@
+/* z-index
+----------------------------------------- */
+//必要になる要素の洗い出し
+$elementes: (c-listAbout__videoToggle, news-icon, l-header, l-spMenu, c-modal);
+
+//index関数で呼び出し
+@function z-index($name) {
+  @return index($elementes, $name);
+}
+
+//呼び出し
+
+.c-listAbout__videoToggle {
+  z-index: z-index(c-listAbout__videoToggle); //1
+}
+
+.c-listProduct__sliderWrap {
+  &.-news {
+    &::after {
+      z-index: z-index(news-icon); //2
+    }
+  }
+}
+
+.l-header {
+  z-index: z-index(l-header); //3
+}
+
+.l-spMenu {
+  z-index: z-index(l-spMenu); //4
+}
+
+.c-modal {
+  z-index: z-index(c-modal); //5
+}

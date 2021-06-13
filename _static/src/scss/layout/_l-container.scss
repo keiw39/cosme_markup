@@ -1,0 +1,22 @@
+/* =====================================================
+  Layout
+===================================================== */
+/* container
+----------------------------------------- */
+@use "../function/responsive" as res;
+
+.l-container {
+  width: 100%;
+  max-width: 1020px;
+  padding-right: 23px;
+  padding-left: 23px;
+  margin: 0 auto;
+
+  @include res.responsive(sm) {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  @include res.responsive(lg) {
+    max-width: 1280px;
+  }
+}

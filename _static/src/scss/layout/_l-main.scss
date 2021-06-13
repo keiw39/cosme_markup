@@ -1,0 +1,10 @@
+/*
+main
+----------------------------------------- */
+@use "../setting/setting" as set;
+@use "../function/responsive" as res;
+@use "../function/rem";
+
+.l-main {
+  background-color: #fff7f7;
+}

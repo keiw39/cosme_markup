@@ -1,0 +1,119 @@
+/* listAccess
+----------------------------------------- */
+@use "../setting/setting" as set;
+@use "../function/responsive" as res;
+@use "../function/rem";
+
+.c-listAccess__wrap {
+  position: absolute;
+  top: 308px;
+  right: 0;
+  width: 94.45%;
+  @include res.responsive(sm) {
+    top: 40%;
+    width: 87.85%;
+  }
+  @include res.responsive(lg) {
+    top: 66%;
+  }
+}
+
+.c-listAccess__detailInner {
+  padding: 48px 23px 50px;
+  background-color: #fff;
+  @include res.responsive(lg) {
+    display: flex;
+    padding-top: rem.rem(125);
+    padding-right: rem.rem(214);
+    padding-bottom: rem.rem(245);
+    padding-left: rem.rem(185);
+  }
+}
+
+.c-listAccess__detailTable {
+  border: none;
+  @include res.responsive(lg) {
+    width: 100%;
+  }
+}
+
+.c-listAccess__detailRow {
+  &:not(:nth-of-type(1)) {
+    .c-listAccess__detailTh {
+      padding-top: 24px;
+    }
+  }
+  &:not(:last-of-type) {
+    .c-listAccess__detailTd {
+      border-bottom: 1px solid #d3d3d3;
+    }
+  }
+  &:last-of-type {
+    .c-listAccess__detailTd {
+      line-height: 1.8;
+      @include res.responsive(lg) {
+        line-height: 2.8;
+      }
+      span {
+        font-size: 12px;
+        @include res.responsive(lg) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  @include res.responsive(lg) {
+    display: flex;
+  }
+}
+
+.c-listAccess__detailTh {
+  float: left;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #222;
+  text-align: left;
+  @include res.responsive(lg) {
+    width: 16.25%;
+    height: 60px;
+    padding-top: 18px;
+    padding-right: rem.rem(20);
+    padding-bottom: 18px;
+    margin-right: 2.5%;
+    font-size: 18px;
+    text-align: right;
+    border-bottom: 1px solid #2d1d11;
+  }
+}
+
+.c-listAccess__detailTd {
+  float: left;
+  width: 100%;
+  padding: 10px 0px 14px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.2;
+  color: #222;
+  letter-spacing: 0;
+  a {
+    text-decoration: none;
+    @include res.responsive(lg) {
+      pointer-events: none;
+    }
+  }
+  &:not(:last-of-type) {
+    border-bottom: 1px solid #d3d3d3;
+  }
+
+  @include res.responsive(lg) {
+    width: 81.25%;
+    height: 60px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: rem.rem(25);
+    font-size: 18px;
+    text-align: left;
+  }
+}

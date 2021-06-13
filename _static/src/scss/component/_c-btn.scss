@@ -1,0 +1,77 @@
+/* =====================================================
+  Component
+===================================================== */
+/* btn
+----------------------------------------- */
+@use "../setting/setting" as set;
+@use "../function/responsive" as res;
+
+.c-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 40px;
+  padding-top: 6px;
+  margin: 0 0 0 auto;
+  overflow: hidden;
+  font-family: set.$font-family-english;
+  font-size: 14px;
+  color: #2d1b0e;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid #2d1b0e;
+  border-radius: 50px;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: #2d1b0e;
+    border-radius: 50px;
+    transition: transform ease 0.5s;
+    transform: scaleY(0);
+    transform-origin: 50% 0%;
+  }
+  &::after {
+    position: absolute;
+    right: 8%;
+    bottom: 45%;
+    width: 30.5px;
+    height: 4px;
+    content: '';
+    background-image: url(../img/c-btn__arrow_black.svg);
+    transition: 0.5s;
+    @include res.responsive(lg) {
+      right: 15%;
+      width: 45px;
+      height: 6px;
+      background-image: url(../img/c-btn__arrow_black_pc.svg);
+    }
+  }
+  &:hover {
+    color: #fff;
+    &::before {
+      transform: scaleY(1);
+      transform-origin: 50% 100%;
+    }
+    &::after {
+      background-image: url(../img/c-btn__arrow_white.svg);
+      @include res.responsive(lg) {
+        width: 45px;
+        height: 6px;
+        background-image: url(../img/c-btn__arrow_white_pc.svg);
+      }
+    }
+  }
+  @include res.responsive(lg) {
+    width: 250px;
+    height: 60px;
+  }
+}
