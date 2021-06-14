@@ -6,7 +6,6 @@
 # Node artifact files
 package-lock.json
 node_modules/
-_static/dist/
 .stylelintrc.json
 02_cosmeデザインカンプ/
 .vscode/settings.json
@@ -25,7 +24,6 @@ _static/dist/
 
 # Maven
 target/
-dist/
 
 # JetBrains IDE
 .idea/
@@ -51,4 +49,3 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-
