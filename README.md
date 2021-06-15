@@ -1,5 +1,8 @@
 # cosme_markup
-「コスメ商品」静的ページのマークアップ
+- 「コスメ商品」静的ページのマークアップ
+- TOPページ
+
+※XDデザインカンプからのコーディング
 
 ## 実装したサイト
 - [AWESOME COSME](https://works03.k-watanabe39.com/)
